@@ -2,20 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 // controller
-const homeController = require('../controller/home')
+const home = require('../controller/home')
 
-router.get('/', async (req, res, next) => {
-    const mahasiswa = await homeController.getCollectionMahasiswa();
-    res.send(mahasiswa);
-})
-
-router.get('/about', (req, res, next) => {
-    res.send("about");
-})
-
-router.get('/pricing', (req, res, next) => {
-    res.send("pricing");
-})
+router.get('/', home.index)
+router.get('/about', home.about)
+router.get('/pricing', home.pricing)
 
 
 module.exports = router;
