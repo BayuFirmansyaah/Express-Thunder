@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 
 // configuration
-app.use(morgan('development'));
+// app.use(morgan('development'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static(path.join( __dirname, '/public/assets')))
