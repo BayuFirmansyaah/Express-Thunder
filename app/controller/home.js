@@ -2,11 +2,15 @@ const asyncQuery = require('../helper/mysql/asyncQuery')
 const controller = {}
 
 controller.index = (req, res) => {
-    res.render('home/index',{
-        title:'Home | express custom',
-        css : 'index',
-        js: 'null',
-    });
+    if(!req.session.user_id){
+        res.send("you must login before use this application");
+    }else{
+        res.render('home/index',{
+            title:'Home | express custom',
+            css : 'index',
+            js: 'null',
+        });
+    }
 }
 
 controller.about = (req, res) => {
@@ -14,7 +18,9 @@ controller.about = (req, res) => {
 }
 
 controller.pricing = (req, res) => {
-    res.send(200)
+   req.session.user_id = 10;
+   req.session.save();
+   res.send("suksess login")
 }
 
 

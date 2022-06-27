@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mahasiswa = require('../controller/mahasiswa');
 
-router.get('/', mahasiswa.index);
+router.get('/', mahasiswa.api);
 router.post('/', mahasiswa.add);
 router.put('/', mahasiswa.update);
 router.delete('/', mahasiswa.remove)
