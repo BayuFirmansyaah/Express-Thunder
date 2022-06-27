@@ -33,10 +33,10 @@ const update = (table, data) => {
         connection.query(sql, value, (err, result, rows) => {
             if(err){
                 console.log(err);
-                reject(err)
+                reject({code: 400, result:err})
             }
 
-            resolve(result);
+            resolve({code: 200, result});
         })
     })
 }

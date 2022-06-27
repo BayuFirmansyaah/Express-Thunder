@@ -9,7 +9,7 @@ const collection = (table) => {
                 reject({status: 'error', code: error.code, message: "An error occured while processing data"});
             }
 
-            resolve(result);
+            resolve({code: 200, result});
         })
     })
 }

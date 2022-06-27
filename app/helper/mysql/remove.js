@@ -6,10 +6,10 @@ const remove = (table, field, value) => {
         connection.query(`DELETE FROM ${table} WHERE ${field}='${value}' `,(err, result)=>{
             if(err){
                 console.log(err);
-                reject(err)
+                reject({code: 400, result: err})
             }
 
-            resolve(result);
+            resolve({code: 200, result});
         })
     })
 }
