@@ -8,6 +8,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
+// mongodb connection
+// require('./app/config/mongodb');
+
 // configuration
 // app.use(morgan('development'));
 app.use(bodyParser.urlencoded({extended: false}));
