@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const connection = require('../../config/mysql');
+const connection = require('../../database/mysql');
 
 const remove = (table, field, value) => {
     return new Promise((resolve, reject) => {
