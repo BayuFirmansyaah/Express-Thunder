@@ -1,4 +1,3 @@
-const asyncQuery = require('../helper/mysql/asyncQuery')
 const controller = {}
 
 controller.index = (req, res) => {

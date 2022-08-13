@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const session = require('express-session');
-const config_session = require('./app/config/session');
+const config_session = require('./app/database/session/mysqlSession');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -27,12 +27,14 @@ app.set('view engine', 'ejs');
 
 // routes here
 const homeRouter = require('./app/routes/home');
-const mahasiswaRouter = require('./app/routes/mahasiswa');
+const authRouter = require('./app/routes/auth');
+// const mahasiswaRouter = require('./app/routes/mahasiswa');
 
 
 // use router
 app.use('/', homeRouter);
-app.use('/mahasiswa', mahasiswaRouter);
+app.use('/auth', authRouter);
+// app.use('/mahasiswa', mahasiswaRouter);
 
 
 // page not found
